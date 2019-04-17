@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace RPG_WorkShop
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            var EnterGame = new EnterGame();
+            Console.WriteLine(EnterGame.WelcomeString());
+            string UserName = Console.ReadLine();
+            Console.WriteLine(EnterGame.WelcomeResponse(UserName));
+            Console.ReadLine();
         }
     }
 }
