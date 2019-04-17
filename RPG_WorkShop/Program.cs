@@ -10,9 +10,11 @@ namespace RPG_WorkShop
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("asdasd");
+            var EnterGame = new EnterGame();
+            Console.WriteLine(EnterGame.WelcomeString());
+            string UserName = Console.ReadLine();
+            Console.WriteLine(EnterGame.WelcomeResponse(UserName));
             Console.ReadLine();
-            //Console.Read();
         }
     }
 }
