@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace RPG_WorkShop
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            Console.WriteLine("asdasd");
+            Console.ReadLine();
+            //Console.Read();
         }
     }
 }
