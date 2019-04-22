@@ -10,13 +10,13 @@ namespace RPG_WorkShop
     {
         public string WelcomeResponse(string UserName)
         {
-            var result = "Hi " + UserName + ",please select your class.";
+            var result = "Hi " + UserName + " , please select your class.";
             return result;
         }
 
         public string WelcomeString()
         {
-            var result = "Hi hero,welcome to SHIN INTERN MUSOU,please enter your name.";
+            var result = "Hi hero , welcome to SHIN INTERN MUSOU , please enter your name.";
             return result;
         }
     }

@@ -11,8 +11,14 @@ namespace RPG_WorkShop
         private static void Main(string[] args)
         {
             var EnterGame = new EnterGame();
-            Console.WriteLine(EnterGame.WelcomeString());
-            string UserName = Console.ReadLine();
+            string UserName = "";
+
+            do
+            {
+                Console.WriteLine(EnterGame.WelcomeString());
+                UserName = Console.ReadLine();
+            } while (UserName == "");
+
             Console.WriteLine(EnterGame.WelcomeResponse(UserName));
             Console.ReadLine();
         }
