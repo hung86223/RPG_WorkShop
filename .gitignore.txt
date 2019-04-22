@@ -1,0 +1,4 @@
+.vs/RPG_WorkShop/v15/*
+
+./RPG_WorkShop/bin/Debug/*
+./RPG_WorkShop/obj/Debug/*
