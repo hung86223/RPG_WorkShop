@@ -8,16 +8,11 @@ namespace RPG_WorkShop
 {
     internal class SignIn
     {
-        public string Sign(string UserName)
-        {
-            return UserName;
-        }
-
         public void ChooseCharacter(string UserName)
         {
             Console.WriteLine("type [Novice],[Warrior],or[Priest] to create your character.");
             var charactor = Console.ReadLine();
-            Charactor profession;
+            Character profession;
             switch (charactor)
             {
                 case "Novice":
@@ -30,6 +25,11 @@ namespace RPG_WorkShop
                     profession = new Priest();
                     Console.WriteLine("Hi Priest " + UserName + ", there is a goblin"); break;
             }
+        }
+
+        public string Sign(string UserName)
+        {
+            return UserName;
         }
     }
 }

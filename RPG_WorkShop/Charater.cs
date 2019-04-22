@@ -6,20 +6,36 @@ using System.Threading.Tasks;
 
 namespace RPG_WorkShop
 {
-    public interface Charactor
+    public interface Character
     {
-        string Name { get; set; }
         int blood { get; set; }
+        string Name { get; set; }
 
         string Attack();
 
         string Skill();
     }
 
-    internal class Warrior : Charactor
+    internal class Goblin : Character
     {
-        public string Name { get; set; }
         public int blood { get; set; }
+        public string Name { get; set; }
+
+        public string Attack()
+        {
+            return "Use his Normal Attack for three points";
+        }
+
+        public string Skill()
+        {
+            return "";
+        }
+    }
+
+    internal class Novice : Character
+    {
+        public int blood { get; set; }
+        public string Name { get; set; }
 
         public string Attack()
         {
@@ -32,10 +48,10 @@ namespace RPG_WorkShop
         }
     }
 
-    internal class Priest : Charactor
+    internal class Priest : Character
     {
-        public string Name { get; set; }
         public int blood { get; set; }
+        public string Name { get; set; }
 
         public string Attack()
         {
@@ -48,26 +64,10 @@ namespace RPG_WorkShop
         }
     }
 
-    internal class Novice : Charactor
+    internal class Warrior : Character
     {
-        public string Name { get; set; }
         public int blood { get; set; }
-
-        public string Attack()
-        {
-            return "";
-        }
-
-        public string Skill()
-        {
-            return "";
-        }
-    }
-
-    internal class Goblin : Charactor
-    {
         public string Name { get; set; }
-        public int blood { get; set; }
 
         public string Attack()
         {

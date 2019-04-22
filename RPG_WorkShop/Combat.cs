@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,10 +11,11 @@ namespace RPG_WorkShop
     {
         public Combat()
         {
-            Action();
+            CharacterAction();
+            MonsterAction();
         }
 
-        public void Action()
+        private void CharacterAction()
         {
             Console.WriteLine("Please choose your action(Attack,Skill,Run)");
             var action = Console.ReadLine();
@@ -33,6 +35,12 @@ namespace RPG_WorkShop
                     break; ;
             }
             Console.WriteLine(result);
+        }
+
+        private void MonsterAction()
+        {
+            Goblin goblin = new Goblin();
+            Console.WriteLine(goblin.Name + goblin.Attack());
         }
     }
 }
