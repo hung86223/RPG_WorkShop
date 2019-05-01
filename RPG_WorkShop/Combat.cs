@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RPG_WorkShop
 {
     internal class Combat
     {
-        public Combat()
+        public Combat(string userName)
         {
-            CharacterAction();
+            CharacterAction(userName);
             MonsterAction();
         }
 
-        private void CharacterAction()
+        private void CharacterAction(string userName)
         {
             Console.WriteLine("Please choose your action(Attack,Skill,Run)");
             var action = Console.ReadLine();
@@ -23,7 +18,7 @@ namespace RPG_WorkShop
             switch (action)
             {
                 case ("Attack"):
-                    result = "UserName,用笨拙小刀攻擊,造成3點傷害";
+                    result = userName + ",用笨拙小刀攻擊,造成3點傷害";
                     break;
 
                 case ("Skill"):
@@ -39,7 +34,7 @@ namespace RPG_WorkShop
 
         private void MonsterAction()
         {
-            Goblin goblin = new Goblin();
+            var goblin = new Goblin();
             Console.WriteLine(goblin.Name + goblin.Attack());
         }
     }

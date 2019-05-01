@@ -8,28 +8,42 @@ namespace RPG_WorkShop
 {
     internal class SignIn
     {
-        public void ChooseCharacter(string UserName)
+        private readonly string _userName;
+
+        public SignIn(string userName)
+        {
+            _userName = userName;
+        }
+
+        public void ChooseCharacter()
         {
             Console.WriteLine("type [Novice],[Warrior],or[Priest] to create your character.");
-            var charactor = Console.ReadLine();
-            Character profession;
-            switch (charactor)
+            var character = Console.ReadLine();
+            ICharacter profession;
+            switch (character)
             {
                 case "Novice":
                     profession = new Novice();
-                    Console.WriteLine("Hi Novice " + UserName + ", there is a goblin"); break;
+
+                    Console.WriteLine("Hi " + profession.Name + " " + _userName + ", there is a goblin");
+
+                    break;
+
                 case "Warrior":
                     profession = new Warrior();
-                    Console.WriteLine("Hi Warrior " + UserName + ", there is a goblin"); break;
+                    Console.WriteLine("Hi" + profession.Name + " " + _userName + ", there is a goblin");
+                    break;
+
                 case "Priest":
                     profession = new Priest();
-                    Console.WriteLine("Hi Priest " + UserName + ", there is a goblin"); break;
+                    Console.WriteLine("Hi " + profession.Name + " " + _userName + ", there is a goblin");
+                    break;
             }
         }
 
-        public string Sign(string UserName)
+        public void Combat()
         {
-            return UserName;
+            var combat = new Combat(_userName);
         }
     }
 }

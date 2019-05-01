@@ -1,28 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RPG_WorkShop
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
-            var SignIn = new SignIn();
-            var EnterGame = new EnterGame();
-            
-            string UserName = "";
+            var enterGame = new EnterGame();
+
+            var userName = "";
 
             do
             {
-                Console.WriteLine(EnterGame.WelcomeString());
-                UserName = Console.ReadLine();
-            } while (UserName == "");
-
-            Console.WriteLine(EnterGame.WelcomeResponse(UserName));
-            SignIn.ChooseCharacter(UserName);
+                Console.WriteLine(enterGame.WelcomeString());
+                userName = Console.ReadLine();
+            } while (userName == "");
+            var signIn = new SignIn(userName);
+            Console.WriteLine(enterGame.WelcomeResponse(userName));
+            signIn.ChooseCharacter();
+            signIn.Combat();
             Console.ReadLine();
         }
     }
