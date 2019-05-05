@@ -5,8 +5,8 @@
         int blood { get; set; }
         string Name { get; set; }
 
-        string Attack();
+        int AttackPoint { get; set; }
 
-        string Skill();
+        int SkillPoint { get; set; }
     }
 }

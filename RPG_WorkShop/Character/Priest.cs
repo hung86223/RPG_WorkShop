@@ -2,29 +2,29 @@
 
 namespace RPG_WorkShop
 {
-    public class Goblin : ICharacter
+    public class Priest : ICharacter
     {
         public int blood
         {
-            get => 15;
+            get => 12;
             set => throw new NotImplementedException();
         }
 
         public string Name
         {
-            get => "Goblin";
+            get => "Priest";
             set => throw new NotImplementedException();
         }
 
         public int AttackPoint
         {
-            get => 3;
+            get => 2;
             set => throw new NotImplementedException();
         }
 
         public int SkillPoint
         {
-            get => 3;
+            get => 5;
             set => throw new NotImplementedException();
         }
     }

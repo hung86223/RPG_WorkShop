@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RPG_WorkShop
 {
-    internal class SignIn
+    internal class ChooseCareer
     {
         private readonly string _userName;
+        private ICharacter profession = null;
 
-        public SignIn(string userName)
+        public ChooseCareer(string userName)
         {
             _userName = userName;
         }
@@ -19,31 +16,31 @@ namespace RPG_WorkShop
         {
             Console.WriteLine("type [Novice],[Warrior],or[Priest] to create your character.");
             var character = Console.ReadLine();
-            ICharacter profession;
             switch (character)
             {
                 case "Novice":
                     profession = new Novice();
-
-                    Console.WriteLine("Hi " + profession.Name + " " + _userName + ", there is a goblin");
-
                     break;
 
                 case "Warrior":
                     profession = new Warrior();
-                    Console.WriteLine("Hi" + profession.Name + " " + _userName + ", there is a goblin");
+
                     break;
 
                 case "Priest":
                     profession = new Priest();
-                    Console.WriteLine("Hi " + profession.Name + " " + _userName + ", there is a goblin");
                     break;
+            }
+
+            if (profession != null)
+            {
+                Console.WriteLine("Hi " + profession.Name + " " + _userName + ", there is a Goblin");
             }
         }
 
-        public void Combat()
+        public ICharacter GetCharacter()
         {
-            var combat = new Combat(_userName);
+            return profession;
         }
     }
 }

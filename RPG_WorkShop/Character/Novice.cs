@@ -2,17 +2,17 @@
 
 namespace RPG_WorkShop
 {
-    public class Goblin : ICharacter
+    public class Novice : ICharacter
     {
         public int blood
         {
-            get => 15;
+            get => 10;
             set => throw new NotImplementedException();
         }
 
         public string Name
         {
-            get => "Goblin";
+            get => "Novice";
             set => throw new NotImplementedException();
         }
 

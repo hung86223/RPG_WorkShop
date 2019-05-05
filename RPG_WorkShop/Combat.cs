@@ -4,38 +4,66 @@ namespace RPG_WorkShop
 {
     internal class Combat
     {
-        public Combat(string userName)
+        private readonly ICharacter _character;
+        private readonly string _userName;
+        private Goblin goblin = new Goblin();
+        private int _blood;
+        private int _monsterBlood;
+
+        public Combat(string userName, ICharacter character)
         {
-            CharacterAction(userName);
-            MonsterAction();
+            _userName = userName;
+            _character = character;
+            _blood = character.blood;
+            _monsterBlood = goblin.blood;
         }
 
-        private void CharacterAction(string userName)
+        public void DisplayStatus()
+        {
+            Console.WriteLine("The Goblin Blood:" + goblin.blood
+                                                  + " Attack:" + goblin.AttackPoint
+                                                  + " Skill:" + goblin.SkillPoint);
+
+            Console.WriteLine(_userName
+                              + "(" + _character.Name
+                              + ") Blood:" + _character.blood
+                              + " Attack:" + _character.AttackPoint
+                              + " Skill:" + _character.SkillPoint);
+        }
+
+        public void CharacterAction()
         {
             Console.WriteLine("Please choose your action(Attack,Skill,Run)");
             var action = Console.ReadLine();
             var result = "";
+
+            var point = 0;
             switch (action)
             {
                 case ("Attack"):
-                    result = userName + ",用笨拙小刀攻擊,造成3點傷害";
+                    point = _character.AttackPoint;
+                    result = _userName + "(" + _character.Name + ")" + ",使用普通攻擊,造成" + point + "點傷害";
                     break;
 
                 case ("Skill"):
-                    result = "UserName,用燒毀魔法攻擊,造成8點傷害";
+                    point = _character.SkillPoint;
+                    result = _userName + "(" + _character.Name + ")" + ",用燒毀魔法攻擊,造成" + point + "點傷害";
                     break;
 
                 case ("Run"):
-                    result = "UserName,害怕怪物,快速逃跑!!";
+                    result = _userName + "(" + _character.Name + ")" + ",害怕怪物,快速逃跑!!";
                     break; ;
             }
+            _monsterBlood -= point;
+            var status = "The Goblin Blood: " + _monsterBlood;
             Console.WriteLine(result);
+            Console.WriteLine(status);
         }
 
-        private void MonsterAction()
+        public void MonsterAction()
         {
             var goblin = new Goblin();
-            Console.WriteLine(goblin.Name + goblin.Attack());
+            Console.WriteLine(goblin.Name);
         }
     }
 }

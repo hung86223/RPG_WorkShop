@@ -2,9 +2,9 @@
 {
     internal class EnterGame
     {
-        public string WelcomeResponse(string UserName)
+        public string WelcomeResponse(string userName)
         {
-            var result = "Hi " + UserName + " , please select your class.";
+            var result = "Hi " + userName + " , please select your class.";
             return result;
         }
 
